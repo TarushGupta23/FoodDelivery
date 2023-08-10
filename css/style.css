@@ -1,0 +1,186 @@
+/* css reset */
+* {
+    margin: 0px; padding: 0px;
+}
+
+/* css variables */
+:root {
+    --primary-color : rgb(214, 86, 129);
+}
+
+/* navigation bar */
+.navbar {
+    display: flex;
+    align-items: center;
+    position: relative; /*this is done so that height of ::before is good*/
+}
+.navbar::before {
+    content: "";
+    background-color: var(--primary-color);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+/* navbar : logo img */
+#logo {
+    margin: 10px 34px;
+}
+#logo img {
+    height: 59px;
+    margin: 3px 6px;
+}
+/* navbar : list styling */
+.navbar ul { display: flex; }
+.navbar li {
+    font-family: 'Ubuntu';
+    list-style: none;
+    font-size: 1.4rem;
+}
+.navbar li a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 3px 20px;
+    border-radius: 20px;
+    transition: all 0.6s ease 0s;
+    margin: 0px 5px;
+}
+.navbar li a:hover {
+    color: var(--primary-color);
+    background-color: white;
+    transform: scale(1.1);
+}
+
+/* Home section */
+#home {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 200px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
+}
+#home::before {
+    content: "";
+    background: url('res/bg2.jpg') no-repeat center center/cover;
+    position: absolute;
+    opacity: 2;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+}
+
+#home h1 , #home p{
+    color: white;
+    text-align: center;
+}
+#home p { 
+    font-family: 'Bree Serif';
+    font-size: 1.2rem;
+}
+
+/* services section */
+.services, .client{
+    margin: 34px;
+    display: flex;
+}
+.box, .client-item{
+    margin: 10px;
+    background-color: white;
+    opacity: 0.8;
+    border: 5px solid var(--primary-color);
+    border-radius: 20px;
+    padding: 10px;
+}
+.services .box img , .client-item img{
+    height: 160px;
+    margin: auto;
+    display: block;
+}
+
+/* Clients section */
+.client-item img { height: 100px }
+.client-item { width: 100%; }
+.client-container {position: relative;}
+.client-container::before {
+    background-color: lightgrey;
+    content: "";
+    height: 100%; width: 100%;
+    position: absolute;
+    z-index: -2;
+}
+
+/* contact us */
+.contact {
+    color: white;
+    position: relative;
+    border-top: solid 10px var(--primary-color);
+    height: 500px;
+}
+.contact::before {
+    content: "";
+    background: url('res/contact.jpeg') no-repeat center center/cover;
+    position: absolute;
+    opacity: 2;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+}
+.btnHolder, .btnHolder div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnHolder div {
+    flex-direction: column;
+}
+/* utility classes {reuseable classes} */
+.services-container {
+    position: relative;
+    border-top: 10px solid var(--primary-color);
+    border-bottom: 10px solid var(--primary-color);
+}
+.services-container::before {
+    content: "";
+    background: url('res/bg.jpeg') no-repeat center center/cover;
+    position: absolute;
+    opacity: 2;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+}
+.h-primary {
+    font-family: 'Bree Serif';
+    font-size: 2.8rem;
+    padding: 12px;
+}
+.h-secondary {
+    font-family: 'Ubuntu';
+    font-size: 2.2rem;
+    padding: 12px;
+}
+.btn {
+    padding: 6px 20px;
+    border: 2px solid white;
+    background: none;
+    border-radius: 20px;
+    color: white;
+    margin: 17px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.6s ease 0s;
+}
+.btn:hover { transform: scale(1.1); }
+.center { text-align: center; }
+
+.Dance:hover {
+    animation: imgDance 0.75s ease 0s 1 none;
+}
+@keyframes imgDance {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+}
